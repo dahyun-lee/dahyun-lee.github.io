@@ -1,0 +1,93 @@
+@import ../utils/mixins
+@import ../utils/variables
+@import ../utils/functions
+
+.contain
+  margin: 0 auto
+
+.row::after
+  content: ''
+  display: block
+  clear: both
+
+[class*="m-"],[class*="t-"],[class*="d-"]
+  float: left
+
+[class*="m-"] img,[class*="t-"] img,[class*="d-"] img
+  width: 100%
+  height: auto
+
+.gutter
+  padding-right: 20px
+
+
+
+
+
+
+
+// .flex
+//   display: flex
+//   justify-content: space-between
+
+//mobile-column
+$mobile-column: 90px
+$mobile-context: 480px
+$mobile-total: 4
+$mobile-gutter: 20px
+
+// @for $i from 1 through $mobile-total
+//   @media screen and (max-width: 767px)
+//     .m-#{ $i }-#{$mobile-total}
+//       width: ($mobile-column * $i + $mobile-gutter * ($i - 1)) / $mobile-context * 100%
+//       padding: 10px
+//
+//     .push-m-#{ $i }-#{$mobile-total}
+//       margin-left: ($mobile-column * $i + $mobile-gutter * ($i - 1)) / $mobile-context * 100%
+
+@for $i from 1 through $mobile-total
+  @media screen and (max-width: 767px)
+    .m-#{ $i }-#{$mobile-total}
+      width: $i / $mobile-total *100%
+
+
+    .push-m-#{ $i }-#{$mobile-total}
+      margin-left: $i / $mobile-total *100%
+
+
+//tablet-column
+$tablet-column: 70px
+$tablet-context: 700px
+$tablet-total: 8
+$tablet-gutter: 20px
+
+// @for $i from 1 through $tablet-total
+//   @media screen and (min-width: 768px)
+//     .t-#{ $i }-#{$tablet-total}
+//       width: ($tablet-column * $i + $tablet-gutter * ($i - 1)) / $tablet-context * 100%
+//       padding: 10px
+//     .push-t-#{ $i }-#{$tablet-total}
+//       margin-left: ($tablet-column * $i + $tablet-gutter * ($i - 1)) / $tablet-context * 100%
+
+@for $i from 1 through $tablet-total
+  @media screen and (min-width: 768px)
+    .t-#{ $i }-#{$tablet-total}
+      width: $i / $tablet-total * 100%
+      padding: 10px
+    .push-t-#{ $i }-#{$tablet-total}
+      margin-left: $i / $tablet-total * 100%
+
+//Desktop-column
+$desktop-column: 60px
+$desktop-context: 940px
+$desktop-total: 12
+$desktop-gutter: 20px
+
+@for $i from 1 through $desktop-total
+  @media screen and (min-width: 1024px)
+    .d-#{ $i }-#{$desktop-total}
+      width: ($desktop-column * $i + $desktop-gutter * ($i - 1))
+      margin: 10px
+      padding: 0
+    .push-d-#{ $i }-#{$desktop-total}
+      margin-left: ($desktop-column * $i + $desktop-gutter * ($i - 1))

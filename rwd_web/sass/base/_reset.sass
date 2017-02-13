@@ -1,0 +1,33 @@
+@import ../utils/mixins
+@import ../utils/variables
+@import ../utils/functions
+
+
+// 박스 사이징 설정
+*, *::before, *::after
+  box-sizing: inherit //부모의 box-sizing  설정을 상속
+
+
+html
+  box-sizing: border-box
+  font-size: 10px
+
+#{$margin-padding-reset}
+  margin: 0
+  padding: 0
+
+body
+  font-family: 'Nanum Gothic', serif
+  font-size: 1.6rem
+
+#{$font-family-inherit}
+  font-family: inherit
+
+
+ul, ol
+  list-style-type: none
+a
+  text-decoration: none
+  color: $link-font-color
+  &:hover , &:focus
+    color: $font-hover-color

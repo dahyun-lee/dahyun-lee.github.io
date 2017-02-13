@@ -1,0 +1,216 @@
+@import ../utils/mixins
+@import ../utils/variables
+@import ../utils/functions
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css)
+
+//layout
+// .wrap
+//   @include layout(1180px)
+//
+// #{$wrapped-content}
+//   width: 100%
+
+
+p
+  color: rgba(51, 51, 51, 0.6)
+  font-size: 1.6rem
+  line-height: $base-line-height
+
+// h1
+//   font-size: rem(24px)
+//   font-weight: 600
+//   letter-spacing: -1.3px
+
+h2
+  font-size: 2.5rem
+  font-weight: 600
+  text-align: center
+
+
+
+
+
+.wrapper-header
+  background: #4d4b4a
+
+
+header
+  padding: 28px 30px
+  h1
+    float: left
+  button
+    background: url('../images/navicon.png')
+    width: 31px
+    height: 26px
+    border: 0
+    text-indent: 31px
+    overflow: hidden
+    float: right
+    @media screen and (min-width: 1024px)
+      display: none
+.main-menu
+  @media screen and (max-width: 767px)
+    display: none
+  @media screen and (min-width: 768px)
+    display: none
+  @media screen and (min-width: 1024px)
+    display: flex
+    justify-content: space-around
+
+
+
+
+
+
+.movie
+  position: relative
+  background: #f8d2c5
+  height: 288px
+  width: 100%
+  .prev
+    background: url('../images/arrow_left.png')
+    width: 27px
+    height: 86px
+    border: 0
+    text-indent: 27px
+    overflow: hidden
+    position: absolute
+    top: 100px
+    left: 30px
+  .next
+    background: url('../images/arrow-right.png')
+    width: 27px
+    height: 86px
+    border: 0
+    text-indent: 27px
+    overflow: hidden
+    position: absolute
+    top: 100px
+    right: 30px
+
+
+.blog
+  padding: 0 30px
+  h2::before, h2::after
+    content: ''
+    display: inline-block
+    border-bottom: 1px solid red
+
+  // .article-header::before,.article-header::after
+  //   content: ''
+  //   display: inline-block
+  //   height: 3rem
+  //   border-bottom: 1px solid #4d4b4a
+  //   flex-basis: 15%
+
+  article
+    margin-bottom: vg(1)
+  figcaption
+    background: #afb2ba
+    padding-left: 20px
+    height: 48px
+    line-height: 48px
+    margin-top: -5px
+    color: #fff
+    font-size: 2.0rem
+    @media screen and (min-width: 768px)
+      background: transparent
+      color: #5a5e65
+      margin-top: vg(1)
+      padding-left: 0
+      font-weight: 600
+    @media screen and (min-width: 1024px)
+      background: transparent
+      color: #5a5e65
+      margin-top: vg(1)
+      padding-left: 0
+      font-weight: 600
+  p
+    @media screen and (max-width: 767px)
+      display: none
+
+.slider
+  position: relative
+  .prev
+    background: url('../images/arrow_left.png')
+    width: 27px
+    height: 86px
+    border: 0
+    text-indent: 27px
+    overflow: hidden
+    position: absolute
+    top: 40%
+    left: 30px
+  .next
+    background: url('../images/arrow-right.png')
+    width: 27px
+    height: 86px
+    border: 0
+    text-indent: 27px
+    overflow: hidden
+    position: absolute
+    top: 40%
+    right: 30px
+
+.writers
+  padding: 0 30px
+  // ul
+  //   display: flex
+  //   flex-flow: column
+  //   align-items: center
+  & li::before
+    content: url('../images/fa-user.png')
+    float: left
+    margin-right: 40px
+    margin-bottom: 40px
+    @media screen and (min-width: 768px)
+      display: block
+  & li
+    position: relative
+    top: 20px
+
+.iframe-wrap
+  width: 100%
+  height: 0
+  padding-bottom: 30%
+  overflow: hidden
+  position: relative
+  iframe
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+
+.submit
+  padding: 0 30px
+  input
+    height: 48px
+    border-radius: 4px
+    line-height: 48px
+    margin-bottom: vg(1)
+    border: 1px solid #dadee8
+    padding-left: 18px
+  button
+    background: #4d4b4a
+    color: #fff
+    font-size: 2rem
+    border-radius: 4px
+    height: vg(3)
+    line-height: vg(3)
+    border: 0
+
+    &::before
+      content: url('../images/fa-send.png')
+      margin-right: 10px
+      position: relative
+      top: 5px
+
+footer
+  height: vg(3)
+  background: #d6d2d1
+  color: #4d4b4a
+  line-height: vg(3)
+  text-align: center
+  margin-top: vg(2)
