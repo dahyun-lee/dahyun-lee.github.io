@@ -20,6 +20,14 @@
 .gutter
   padding-right: 20px
 
+.container
+  @media screen and (min-width: 1024px)
+    width: 960px
+    margin: 0 auto
+  .movie &, .slider &
+    position: relative
+
+
 
 
 
@@ -79,7 +87,7 @@ $tablet-gutter: 20px
 
 //Desktop-column
 $desktop-column: 60px
-$desktop-context: 940px
+$desktop-context: 960px
 $desktop-total: 12
 $desktop-gutter: 20px
 
