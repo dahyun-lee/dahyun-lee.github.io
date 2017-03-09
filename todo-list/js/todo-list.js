@@ -33,11 +33,19 @@
     input.focus();
 
 
-    document.querySelector('.todo-list input').onclick=function(){
-      if(this.checked === true){
-        this.parentNode.style.cssText = 'text-decoration:line-through; color:rgb(179, 182, 179)';
-      }else{
-        this.parentNode.style.cssText = '';
+    // var check_num = todo_list.children.length;
+    // var li = todo_list.children[check_num];
+    // var checked_box = li.querySelector('.check_box')
+
+    var inputs = document.querySelectorAll('.todo-list input');
+    for ( var i = 0; i < inputs.length; i++ ){
+      inputs[i].onclick = function(){
+
+        if(this.checked === true){
+          this.parentNode.style.cssText = 'text-decoration:line-through; color:rgb(179, 182, 179)';
+        }else{
+          this.parentNode.style.cssText = '';
+        }
       }
     }
 
@@ -51,7 +59,7 @@
 
     x_btn.onclick = function(){
       alert("삭제하시겠습니까?");
-       item.parentNode.removeChild(item,check_box,x_btn);
+       todo_list.removeChild(item);
       }
 
     };
